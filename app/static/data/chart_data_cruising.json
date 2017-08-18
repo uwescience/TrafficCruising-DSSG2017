@@ -1,0 +1,841 @@
+[
+{
+"day":"Monday",
+"time":"Jan 1, 1900 0:00:00",
+"count":477
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 1:00:00",
+"count":480
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 2:00:00",
+"count":308
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 3:00:00",
+"count":324
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 4:00:00",
+"count":702
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 5:00:00",
+"count":830
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 6:00:00",
+"count":1706
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 7:00:00",
+"count":2370
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 8:00:00",
+"count":2513
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 9:00:00",
+"count":2241
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 10:00:00",
+"count":2066
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2376
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 12:00:00",
+"count":2933
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2583
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2382
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2832
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 16:00:00",
+"count":3311
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 17:00:00",
+"count":3338
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 18:00:00",
+"count":2834
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2637
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1526
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1481
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1178
+},
+{
+"day":"Monday",
+"time":"Jan 1, 1900 23:00:00",
+"count":1098
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 0:00:00",
+"count":706
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 1:00:00",
+"count":338
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 2:00:00",
+"count":615
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 3:00:00",
+"count":360
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 4:00:00",
+"count":342
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 5:00:00",
+"count":1179
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 6:00:00",
+"count":1897
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 7:00:00",
+"count":2555
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 8:00:00",
+"count":2479
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 9:00:00",
+"count":2228
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 10:00:00",
+"count":2259
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2383
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 12:00:00",
+"count":3015
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2507
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2437
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2835
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 16:00:00",
+"count":3243
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 17:00:00",
+"count":3181
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 18:00:00",
+"count":2808
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2272
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1699
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1446
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1341
+},
+{
+"day":"Tuesday",
+"time":"Jan 1, 1900 23:00:00",
+"count":766
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 0:00:00",
+"count":381
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 1:00:00",
+"count":821
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 2:00:00",
+"count":296
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 3:00:00",
+"count":520
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 4:00:00",
+"count":558
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 5:00:00",
+"count":1044
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 6:00:00",
+"count":1778
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 7:00:00",
+"count":2391
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 8:00:00",
+"count":2613
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 9:00:00",
+"count":2190
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 10:00:00",
+"count":2125
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2251
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 12:00:00",
+"count":2675
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2369
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2271
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2373
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 16:00:00",
+"count":3067
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 17:00:00",
+"count":3268
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 18:00:00",
+"count":2697
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2263
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1709
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1721
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1272
+},
+{
+"day":"Wednesday",
+"time":"Jan 1, 1900 23:00:00",
+"count":1109
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 0:00:00",
+"count":828
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 1:00:00",
+"count":748
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 2:00:00",
+"count":542
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 3:00:00",
+"count":377
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 4:00:00",
+"count":418
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 5:00:00",
+"count":1119
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 6:00:00",
+"count":1488
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 7:00:00",
+"count":2651
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 8:00:00",
+"count":2627
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 9:00:00",
+"count":2244
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 10:00:00",
+"count":2416
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2598
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 12:00:00",
+"count":3151
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2692
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2450
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 15:00:00",
+"count":3018
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 16:00:00",
+"count":3089
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 17:00:00",
+"count":3496
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 18:00:00",
+"count":3143
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2575
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1812
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1818
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1500
+},
+{
+"day":"Thursday",
+"time":"Jan 1, 1900 23:00:00",
+"count":1249
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 0:00:00",
+"count":567
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 1:00:00",
+"count":427
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 2:00:00",
+"count":469
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 3:00:00",
+"count":973
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 4:00:00",
+"count":1106
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 5:00:00",
+"count":1153
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 6:00:00",
+"count":1374
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 7:00:00",
+"count":2436
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 8:00:00",
+"count":2596
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 9:00:00",
+"count":2067
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 10:00:00",
+"count":2192
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2647
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 12:00:00",
+"count":2864
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2598
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2586
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2799
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 16:00:00",
+"count":3181
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 17:00:00",
+"count":3300
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 18:00:00",
+"count":2757
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2229
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1758
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 21:00:00",
+"count":2122
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1594
+},
+{
+"day":"Friday",
+"time":"Jan 1, 1900 23:00:00",
+"count":1486
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 0:00:00",
+"count":737
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 1:00:00",
+"count":678
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 2:00:00",
+"count":505
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 3:00:00",
+"count":299
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 4:00:00",
+"count":238
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 5:00:00",
+"count":416
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 6:00:00",
+"count":723
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 7:00:00",
+"count":980
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 8:00:00",
+"count":1286
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 9:00:00",
+"count":1846
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 10:00:00",
+"count":1997
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2408
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 12:00:00",
+"count":2615
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2660
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2520
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2651
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 16:00:00",
+"count":2906
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 17:00:00",
+"count":2736
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 18:00:00",
+"count":2735
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 19:00:00",
+"count":2280
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1932
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1705
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1458
+},
+{
+"day":"Saturday",
+"time":"Jan 1, 1900 23:00:00",
+"count":1174
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 0:00:00",
+"count":757
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 1:00:00",
+"count":653
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 2:00:00",
+"count":470
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 3:00:00",
+"count":511
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 4:00:00",
+"count":253
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 5:00:00",
+"count":391
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 6:00:00",
+"count":601
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 7:00:00",
+"count":680
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 8:00:00",
+"count":1019
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 9:00:00",
+"count":1535
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 10:00:00",
+"count":1723
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 11:00:00",
+"count":2174
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 12:00:00",
+"count":2177
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 13:00:00",
+"count":2297
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 14:00:00",
+"count":2299
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 15:00:00",
+"count":2195
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 16:00:00",
+"count":2293
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 17:00:00",
+"count":2352
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 18:00:00",
+"count":1918
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 19:00:00",
+"count":1923
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 20:00:00",
+"count":1476
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 21:00:00",
+"count":1343
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 22:00:00",
+"count":1175
+},
+{
+"day":"Sunday",
+"time":"Jan 1, 1900 23:00:00",
+"count":725
+}]

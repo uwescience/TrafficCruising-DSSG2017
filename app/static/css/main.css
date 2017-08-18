@@ -1,0 +1,218 @@
+body {
+    display: block;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#map {
+    height: 100%;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+}
+
+#side-panel {
+    height: 100%;
+    width: 50%;
+    float: right;
+    background-color: #303030;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px 'Montserrat', sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.legend {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+#days, #times, #cruising {
+  width:100%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom: 5%;
+  margin-top:2.5%;
+}
+
+#title {
+  color: #FFFFFF;
+  font-size: 35;
+  text-align: center;
+  margin:5%;
+}
+
+#description {
+  color: #FFFFFF;
+  font-size: 15;
+  text-align: left;
+  margin:5%;
+  font-weight: lighter;
+}
+
+#day_spacer{
+  width: 2%;
+  height:auto;
+  display:inline-block;
+}
+
+#time_spacer{
+  width: 2%;
+  height:auto;
+  display:inline-block;
+}
+
+#cruising_spacer{
+  width: 2%;
+  height:auto;
+  display:inline-block;
+}
+#big_space{
+  width: 9%;
+  height:auto;
+  display:inline-block;
+}
+
+#between{
+  height:5%;
+}
+
+.day_button {
+  width: 10%;
+  text-align: center;
+  color: #1bbc9b;
+  background: #303030;
+  border-color: #1bbc9b;
+  font-size: 1vw;
+  display:inline-block;
+  border-style: solid;
+  margin:0%;
+}
+
+.day_button.active {
+  background: #1bbc9b;
+  color: #FFFFFF;
+}
+
+.day_button:hover {
+  background: #1bbc9b;
+  color: #FFFFFF;
+}
+
+.day_button:focus {
+  outline:0;
+}
+
+#all {
+  width: 20%;
+  text-align: center;
+  color: #e77e23;
+  background: #303030;
+  border-color: #e77e23;
+  font-size: 1vw;
+  display:inline-block;
+  border-style: solid;
+}
+
+#all.active {
+  background: #e77e23;
+  color: #FFFFFF;
+}
+#all:hover {
+  background: #e77e23;
+  color: #FFFFFF;
+}
+
+.time_button {
+  width: 18%;
+  text-align: center;
+  color: #2ecc71;
+  background: #303030;
+  border-color: #2ecc71;
+  font-size: 1vw;
+  display:inline-block;
+  border-style: solid;
+}
+
+.time_button.active {
+  background: #2ecc71;
+  color: #FFFFFF;
+}
+.time_button:hover{
+  background: #2ecc71;
+  color: #FFFFFF;
+}
+
+.time_button:focus {
+  outline:0;
+}
+
+.cruising_button {
+  width: 43%;
+  text-align: center;
+  color: #ff9393;
+  background: #303030;
+  border-color: #ff9393;
+  font-size: 1vw;
+  display:inline-block;
+  border-style: solid;
+}
+
+.cruising_button.active {
+  background: #ff9393;
+  color: #FFFFFF;
+}
+.cruising_button:hover{
+  background: #ff9393;
+  color: #FFFFFF;
+}
+
+.cruising_button:focus {
+  outline:0;
+}
+
+.marks {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#chart{
+  width: 100%;
+  cursor: default;
+}
+
+#chart.vega-embed{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#chart_container{
+  width: 100%;
+  justify-content: center;
+}
+
+#daydescription, #timedescription{
+  color: #FFFFFF;
+  font-size: 1vw;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 2.5%;
+}
+
+
+
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
