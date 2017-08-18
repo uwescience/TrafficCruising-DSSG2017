@@ -11,9 +11,9 @@ This research has the potential to help transportation agencies, technology comp
 <img src="results/demo.gif">
 
 ## Description of Folders
-* analysis: contains code for supporting tasks carried out throughout the process of building the pipeline.
-* app: contains code for the web application to visualize the aggregated data.
-* pipeline: contains code for our process of transforming the data to a usable format.
+* **analysis**: contains code for supporting tasks carried out throughout the process of building the pipeline.
+* **app**: contains code for the web application to visualize the aggregated data.
+* **pipeline**: contains code for our process of transforming the data to a usable format.
 
 ## Team Members
 
