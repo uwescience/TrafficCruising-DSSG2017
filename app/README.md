@@ -17,6 +17,10 @@
 * **templates**: contains template html file to be rendered by Flask app
 * app.py: Flask web app
 
+## Web Application Demo
+
+<img src="../results/demo.gif">
+
 ## How To Use Web Application Demo
 
 1. Clone github repository to local computer
@@ -25,3 +29,4 @@
 4. Navigate to app folder
 5. From command line, type: "python app.py"
 6. Open web browser to "localhost:5000"
+
