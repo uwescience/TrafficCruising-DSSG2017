@@ -2,9 +2,9 @@
 
 ## Description
 
-Cruising by vehicles that have arrived at their destination but are driving around for a place to park and by for-hire and transportation network company (TNC) vehicles that are queued in traffic have a significant impact on congestion. The Cruising Traffic Analysis project will develop algorithms to quantify aggregated levels of vehicle traffic cruising. The research intends to apply data science techniques to a sample of anonymous travel sensor data, paid parking transaction information, and parking occupancy surveys conducted by the City of Seattle. We hope to generate heat maps depicting relative prevalence of cruising and propose measurement standards for cruising activity, such as a “cruising index” that could pertain to various methods of data collection and processing. 
- 
-We will attempt to differentiate between the aggregated footprint of vehicles trying to find on-street parking and the amount due to trip deadheading. If successful, this research could help transportation agencies, technology companies, and car companies predict the availability of parking and more accurately direct travelers with online, mobile, and connected tools, thereby reducing congestion impacts, emissions, and fuel costs.
+Vehicle cruising (individuals looking for parking and for-hire vehicles operating without a passenger) is a major contributor to traffic congestion in downtown Seattle. Still, the magnitude and location of vehicle cruising is poorly understood. To get a better understanding of where vehicles cruise, we propose a framework for using traffic sensor data. We generate most likely paths traversed through filtering out unrealistic behavior and incorporating routing. We break up individual trips via segmentation in terms of time and method of transportation. After segmentation, we introduce metadata to describe the trip and use a semi-supervised machine learning approach to label the data. Ultimately, we create an interactive heat map of downtown Seattle that can be used to visualize the relative levels of cruising.
+
+This research has the potential to help transportation agencies, technology companies, and car companies predict the availability of parking and more accurately direct travelers with online, mobile, and connected tools, thereby reducing congestion impacts, emissions, and fuel costs.
 
 ## Web Application Demo
 
