@@ -1,5 +1,19 @@
-def filter_noncruising(trip_list, keep_only_driving=True,
-    keep_all_fhv=False, silent=True):
+def filter_noncruising(trip_list, keep_only_driving=False,
+    keep_all_fhv=True, silent=True):
+    """Removes trips labeled as 'not_cruising' after classification.
+    
+    trip_list [list]: a list of dicts in JSON format.
+    keep_only_driving [bool]: should segments not identified
+        as 'driving' be dropped from all trips? This should
+        always be set to False unless modifications have been
+        made to the heatmap code. Use the function segment_driving
+        instead.
+    keep_all_fhv [bool]: should for-hire vehicles be included in
+        the output regardless of whether they're displaying cruising
+        behavior?
+    silent [bool]: if True, does not print reports.
+    
+    Returns list of dicts in JSON format."""
 
     # keep_list = np.repeat(0, len(trip_list))
     # for i in range(len(trip_list)):
