@@ -31,14 +31,14 @@ This research has the potential to help transportation agencies, technology comp
 ## Team Members
 
 **DSSG Fellows**
-* Brett Bejcek
-* Anamol Pundle
-* Orysya Stus
-* Michael Vlah
+* Brett Bejcek, The Ohio State University
+* Anamol Pundle, University of Washington
+* Orysya Stus, University of California, San Diego
+* Michael Vlah, University of Washington
 
 **Data Science Leads**
-* Valentina Staneva
-* Vaughn Iverson
+* Valentina Staneva, eScience Institute
+* Vaughn Iverson, eScience Institute
 
 **Project Lead**
-* Steve Barham, Data Scientist, Seattle Department of Transportation
+* Steve Barham, Seattle Department of Transportation
