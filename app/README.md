@@ -16,3 +16,12 @@
     * getdata.js: AJAX calls to python web framework to get data
 * **templates**: contains template html file to be rendered by Flask app
 * app.py: Flask web app
+
+## How To Use Web Application Demo
+
+1. Clone github repository to local computer
+2. Download Python 3.6 
+3. Install required dependencies with the following command: "pip install Flask"
+4. Navigate to app folder
+5. From command line, type: "python app.py"
+6. Open web browser to "localhost:5000"
