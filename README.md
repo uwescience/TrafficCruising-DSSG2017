@@ -6,6 +6,9 @@ Cruising by vehicles that have arrived at their destination but are driving arou
  
 We will attempt to differentiate between the aggregated footprint of vehicles trying to find on-street parking and the amount due to trip deadheading. If successful, this research could help transportation agencies, technology companies, and car companies predict the availability of parking and more accurately direct travelers with online, mobile, and connected tools, thereby reducing congestion impacts, emissions, and fuel costs.
 
+## Web Application Demo
+
+<img src="results/demo.gif">
 
 ## Team Members
 
