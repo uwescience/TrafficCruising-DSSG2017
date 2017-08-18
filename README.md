@@ -17,15 +17,15 @@ This research has the potential to help transportation agencies, technology comp
 
 ## Team Members
 
-**Project Lead**
-* Steve Barham, Data Scientist, Seattle Department of Transportation
-
-**Data Science Leads**
-* Valentina Staneva
-* Vaughn Iverson
-
 **DSSG Fellows**
 * Brett Bejcek
 * Anamol Pundle
 * Orysya Stus
 * Michael Vlah
+
+**Data Science Leads**
+* Valentina Staneva
+* Vaughn Iverson
+
+**Project Lead**
+* Steve Barham, Data Scientist, Seattle Department of Transportation
