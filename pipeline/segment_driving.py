@@ -2,6 +2,17 @@ import itertools as itt
 
 
 def segment_driving(trip_list, silent=True):
+    """Isolates driving portions of trips.
+    
+    For each trip, identifies all segments where the traveler
+    was identified as 'driving' (versus 'walking', etc.), and
+    separates them as if they're individual trips. This is 
+    necessary for the heatmap to work properly.
+    
+    trip_list [list]: a list of dicts in JSON format.
+    silent [bool]: if True, does not print reports.
+    
+    Returns list of dicts in JSON format."""
 
     if silent == False:
         print('Separating driving portions of trips.')
