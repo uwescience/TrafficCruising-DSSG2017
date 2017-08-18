@@ -15,6 +15,16 @@ This research has the potential to help transportation agencies, technology comp
 * **app**: contains code for the web application to visualize the aggregated data.
 * **pipeline**: contains code for our process of transforming the data to a usable format.
 
+
+## How To Use Web Application Demo
+
+1. Clone github repository to local computer
+2. Download Python 3.6 
+3. Install required dependencies with the following command: "pip install Flask"
+4. Navigate to app folder
+5. From command line, type: "python app.py"
+6. Open web browser to "localhost:5000"
+
 ## Team Members
 
 **DSSG Fellows**
