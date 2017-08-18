@@ -11,10 +11,13 @@ This research has the potential to help transportation agencies, technology comp
 <img src="results/demo.gif">
 
 ## Description of Folders
+
 * **analysis**: contains code for supporting tasks carried out throughout the process of building the pipeline.
 * **app**: contains code for the web application to visualize the aggregated data.
+* **data**: contains supporting data necessary at different steps in pipeline.
+* **models**: contains analysis for different machine learning approaches.
 * **pipeline**: contains code for our process of transforming the data to a usable format.
-
+* **results**: contains final papers, presentations, and images.
 
 ## How To Use Web Application Demo
 
@@ -28,14 +31,14 @@ This research has the potential to help transportation agencies, technology comp
 ## Team Members
 
 **DSSG Fellows**
-* Brett Bejcek
-* Anamol Pundle
-* Orysya Stus
-* Michael Vlah
+* Brett Bejcek, The Ohio State University
+* Anamol Pundle, University of Washington
+* Orysya Stus, University of California, San Diego
+* Michael Vlah, University of Washington
 
 **Data Science Leads**
-* Valentina Staneva
-* Vaughn Iverson
+* Valentina Staneva, eScience Institute
+* Vaughn Iverson, eScience Institute
 
 **Project Lead**
-* Steve Barham, Data Scientist, Seattle Department of Transportation
+* Steve Barham, Seattle Department of Transportation
