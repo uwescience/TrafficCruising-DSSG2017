@@ -1,4 +1,4 @@
-# DSSG2017-TrafficSensors
+# Traffic Cruising Data Science for Social Good Project
 
 ## Description
 
