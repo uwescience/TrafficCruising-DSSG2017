@@ -1,0 +1,9 @@
+/data/large_files
+/scripts/.ipynb_checkpoints
+*.tmp
+*.pyc
+thumbs.db
+mike_todo.txt
+.Rhistory
+/hax/*.pdf
+/rethinkdb_data

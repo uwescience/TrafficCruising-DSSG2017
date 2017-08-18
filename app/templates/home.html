@@ -1,0 +1,98 @@
+<!-- ************************************** -->
+<!-- PRODUCE HEATMAP OFF OF AGGREGATED DATA -->
+<!--          CODE BY BRETT BEJCEK          -->
+<!--        CRUISING TEAM @ DSSG 2017       -->
+<!-- ************************************** -->
+
+<html>
+<head>
+  <title>Cruising Analysis</title>
+
+  <!-- Leaflet javascript stylesheet -->
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+  <!-- Vega Links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-rc2/vega.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.10/vega-lite.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.19/vega-embed.js"></script>
+
+
+  <style media="screen">
+    /* Hide Vega-Imbed links  */
+    .vega-actions a {
+      visibility:hidden;
+    }
+  </style>
+
+  <!-- Custom styling -->
+  <link rel="stylesheet" href="../static/css/main.css" />
+
+  <!-- JQuery javascript -->
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+  <!-- Create div for map -->
+  <div id="map"></div>
+
+  <!-- Connect to data for intersection information (optional plotting) -->
+  <script src="../static/data/intersections.js"></script>
+
+  <!-- Contains functions to call Flask and return data needed for filter -->
+  <script src="../static/javascript/getdata.js"></script>
+
+  <!-- Draws base layer of map -->
+  <script src="../static/data/base_layer.js"></script>
+
+  <!-- Contains functions to initializemap, drawmap, and clearmap -->
+  <script src="../static/javascript/drawmap.js"></script>
+
+  <div id="side-panel">
+    <div id="header">
+      <h1 id = "title">CRUISING IN DOWNTOWN SEATTLE</h1>
+      <h2 id = "description">As part of The Data Science for Social Good Program at The University of Washington, the Traffic Cruising Team has produced a heatmap to identify cruising in the downtown Seattle area.</h2>
+    </div>
+    <p id = daydescription>SELECT TYPE OF CRUISING</p>
+    <div id ="cruising">
+      <button type = "button" id ="Parking" class = "cruising_button">PARKING</button>
+      <div id = "cruising_spacer"></div>
+      <button type = "button" id ="FHV" class = "cruising_button">FOR HIRE VEHICLES</button>
+    </div>
+    <p id = daydescription>SELECT DAY</p>
+    <div id ="days">
+      <button type = "button" id ="Monday" class = "day_button">MON</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id ="Tuesday" class = "day_button">TUE</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id ="Wednesday" class = "day_button">WED</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id ="Thursday" class = "day_button">THR</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id ="Friday" class = "day_button">FRI</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id ="Saturday" class = "day_button">SAT</button>
+      <div id = "day_spacer"></div>
+      <button type = "button" id = "Sunday" class = "day_button">SUN</button>
+    </div>
+    <p id = timedescription>SELECT TIME</p>
+    <div id ="times">
+      <button type = "button" id ="All" class = "time_button">ALL DAY</button>
+      <div id = "big_space"></div>
+      <button type = "button" id ="Morning" class = "time_button">MORNING</button>
+      <div id = "time_spacer"></div>
+      <button type = "button" id ="Midday" class = "time_button">MIDDAY</button>
+      <div id = "time_spacer"></div>
+      <button type = "button" id ="Evening" class = "time_button">EVENING</button>
+    </div>
+    <div id = "chart_container">
+      <p class = "dynamicdescription"></p>
+    <div id = "chart"></div>
+    </div>
+  </div>
+  <script src="../static/javascript/chart.js"></script>
+  <script src="../static/javascript/addlisteners.js"></script>
+</body>
+</html>
