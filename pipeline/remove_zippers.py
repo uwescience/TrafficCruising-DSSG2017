@@ -1,6 +1,4 @@
 import networkx as nx
-import numpy as np
-import itertools as itt
 
 def remove_zippers(trip_list, undirected_graph, directed_graph, silent=True):
     """ Trips with pedestrians walking the wrong way on a one-way street,
