@@ -3,10 +3,12 @@
 ##           07-06-17 | Brett Bejcek            ##
 ##################################################
 
+#this script requires data that are not public. contact the developers to discuss access.
+
 # File List for Analysis of 2nd Street
 
 files <- c("Sensor_Raw_1494252000.csv", "Sensor_Raw_1494255600.csv", "Sensor_Raw_1494259200.csv",
-           "Sensor_Raw_1494262800.csv", "Sensor_Raw_1494266400.csv", "Sensor_Raw_1494270000.csv", 
+           "Sensor_Raw_1494262800.csv", "Sensor_Raw_1494266400.csv", "Sensor_Raw_1494270000.csv",
            "Sensor_Raw_1494273600.csv", "Sensor_Raw_1494277200.csv", "Sensor_Raw_1494280800.csv",
            "Sensor_Raw_1494284400.csv", "Sensor_Raw_1494288000.csv", "Sensor_Raw_1494291600.csv",
            "Sensor_Raw_1494295200.csv", "Sensor_Raw_1494298800.csv", "Sensor_Raw_1494302400.csv",
@@ -42,7 +44,7 @@ sensors_all_other <- sensors[!(sensors$sensor %in% sensors_2nd$sensor),]
 data <- Sensor_Raw_1494252000
 data <- unique(data[,1:6])
 
-# Starting and End Point 
+# Starting and End Point
 start <- 265104 #2nd and stewart beginning
 end <- 265118 # 2nd and james end
 
