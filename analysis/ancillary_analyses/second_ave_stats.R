@@ -2,6 +2,14 @@
 #Mike Vlah (vlahm13@gmail.com)
 #10 July 2017
 
+#code for determining whether read rate is consistent across sensors, based on
+#reads collected for 2nd avenue. Here we assume that all vehicles detected at
+#the beginning and end of 2nd ave, and nowhere but 2nd ave between, were traveling
+#down second ave. From this we can calculate the proportion of sensors on 2nd that
+#successfully detected each vehicle.
+
+#this script requires data that are not public. contact me to discuss access.
+
 #install packages if necessary and load them
 if(!require(lubridate)) install.packages('lubridate')
 if(!require(anytime)) install.packages('anytime')
@@ -9,7 +17,8 @@ library(lubridate)
 library(anytime)
 
 #import 2nd ave trip data
-setwd('/home/mike/git/dssg/cruising/data/large_files')
+filedir = getwd()
+setwd(paste0(filedir, '/../../data/'))
 trips = read.csv('second_ave_sensors_path.csv')
 colnames(trips)[colnames(trips)=='hour'] = 'timestamp'
 

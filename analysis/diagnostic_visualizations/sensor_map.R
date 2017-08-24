@@ -2,6 +2,8 @@
 #mike vlah (vlahm13@gmail.com)
 #7/7/17
 
+#this script requires data that are not public. contact me to discuss access.
+
 rm(list=ls()); cat('/014')
 
 #install (if necessary) and load packages
