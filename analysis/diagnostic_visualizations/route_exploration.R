@@ -5,19 +5,18 @@
 
 #basic use:
 #1. in Rstudio, fold sections with Alt+o (Windows, Linux) or Cmd+Opt+o (OS X)
-#2. set working directory and paths to data files below
+#2. set working directory and paths to data files below (contact us to discuss data access)
+    #NOTE: requires both pre- and post-routed JSON input files. Post-routed must
+    #have passed through at least the "add_features" step of the pipeline.
 #3. place cursor after section B and run everything above it using Ctrl+Alt+b (Windows, Linux)
 #or Cmd+Opt+b (OS X)
-#4. unfold section C (click yellow box) and explore.
+#4. unfold section C (click box to the right of the section header) and explore.
 #5. save anything interesting you found using the commented lines in section D
 
 #TODO:
-#1. incorporate additional hours/full days
-#2. make interpolated segments dashed (this is unexpectedly tedious)
-#3. add option to plotter for labeling only sensor hits by time
-#4. add option to filt by blocks_observed when total time is divided into n_blocks
-#5. split 20-70
-#6. fix the color of the final point in cases like this: 3b44db3b498495f0402f64cbca6401bf6260200d37642f380cbb6f8cfb7b214e
+#1. add option to plotter for labeling only sensor hits by time
+#2. add option to filt by blocks_observed when total time is divided into n_blocks
+#3. fix the color of the final point in cases like this: 3b44db3b498495f0402f64cbca6401bf6260200d37642f380cbb6f8cfb7b214e
 
 #clear environment and suppress warnings
 rm(list=ls()); cat('/014')
