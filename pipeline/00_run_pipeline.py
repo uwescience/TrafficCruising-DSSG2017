@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 # reload(pl)
 
 #set working directory to top level of git repo
-os.chdir('/home/mike/git/dssg/TrafficCruising-DSSG2017')
+os.chdir('/home/ubuntu/RUN_PIPELINE_HERE/TrafficCruising-DSSG2017')
 
 #load API key from environment variable
 key = os.environ['ACYC']
@@ -22,13 +22,13 @@ r.connect(host='localhost', port=28015).repl() #local
 graphs = pl.graph_generator('data/nodes.geojson')
 
 #select a database (existing or not) to write records to
-db = 'chili'
+db = 'example'
 
 #pull new records from Acyclica
 pl.retrieve_records(api_key=key,
     sensor_path='data/IntersectionToSensor.csv',
-    db_name=db, end_date='2017-08-04',
-    start_date='2017-08-03', json_chunk_size=5e3, verbosity=2)
+    db_name=db, #omitting end_date here so it defaults to today
+    start_date='prev_week', json_chunk_size=5e3, verbosity=2)
 
 #loop through each day stored in the database
 for tname in r.db(db).table_list().run():

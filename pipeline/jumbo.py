@@ -38,14 +38,20 @@ def jumbo_write_json(data, db_name, table_name, chunk_size=5000, silent=True):
     nchunks = math.ceil(list_length / chunk_size)
     rem = list_length % chunk_size
 
-    if silent == False:
-        print('Writing list of ' + str(list_length) + ' trips to table "' \
-            + table_name + '".')
-
     #create database if it doesn't already exist
     if db_name not in r.db_list().run():
         print('Creating database "' + db_name + '".')
         r.db_create(db_name).run()
+
+    #create table if it doesn't already exist
+    if table_name not in r.db(db_name).table_list().run():
+        print('Creating table "' + table_name + '" in database "' \
+            + db_name + '".')
+        r.db(db_name).table_create(table_name).run()
+
+    if silent == False:
+        print('Writing list of ' + str(list_length) + ' trips to table "' \
+            + table_name + '".')
 
     #digest data and write to RethinkDB
     for i in range(nchunks):
@@ -58,12 +64,6 @@ def jumbo_write_json(data, db_name, table_name, chunk_size=5000, silent=True):
 
         if silent == False:
             print('Writing trips ' + str(s) + '-' + str(e - 1) + '.')
-
-        #create table if it doesn't already exist
-        if table_name not in r.db(db_name).table_list().run():
-            print('Creating table "' + table_name + '" in database "' \
-                + table_name + '".')
-            r.db(db_name).table_create(table_name).run()
 
         #write chunk to rethink (some data may be lost in case of power failure)
         r.db(db_name).table(table_name).insert(data[s:e]).run(durability='soft',
@@ -350,7 +350,7 @@ def retrieve_records(api_key, sensor_path, db_name,
 
     if verbosity > 0:
         run_time = round((time.time() - start_time) / 60, 2)
-        print('\nFinished writing all records for ' + str(ndays) + ' day(s) ' \
+        print('Finished writing all records for ' + str(ndays) + ' day(s) ' \
             + 'in ' + str(run_time) + ' minutes.\nRecords are in database "' \
             + db_name + '".')
 
