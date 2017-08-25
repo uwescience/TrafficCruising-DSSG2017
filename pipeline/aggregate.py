@@ -1,11 +1,23 @@
 import json
 import pandas as pd
 
-def aggregate(data, write_path='app/static/data/aggregated.txt',
+def aggregate(trip_list, write_path='app/static/data/aggregated.txt',
     chart_path_1='app/static/data/chart_data_fhv.json',
     chart_path_2='app/static/data/chart_data_cruising.json',
     intersections_path='data/intersections.csv',
     silent=True):
+    """Combines paths by street segment in preparation for visualization.
+
+    trip_list [list]: a list of dicts in JSON format.
+    write_path [str]: path and filename for heatmap data.
+    chart_path_1 [str]: path and filename for for-hire vehicle
+        side plot data.
+    chart_path_2 [str]: path and filename for cruising vehicle
+        side plot data.
+    intersections_path [str]: path to intersections.csv data file.
+    silent [bool]: if True, does not print reports.
+
+    Returns nothing."""
 
     if silent == False:
         print('Preparing to aggregate records.')

@@ -4,7 +4,7 @@ import itertools as itt
 def segment_stops(trip_list, stop_dur=10, append_tag=True, retain_stops=True,
     silent=True):
 
-    """Splits trips if there are sufficiently large stops, returns new table name.
+    """Splits trips if there are sufficiently large stops.
 
     trip_list [list]: a list of dicts in JSON format.
     stop_dur [int]: duration of stops (in minutes) that will be used

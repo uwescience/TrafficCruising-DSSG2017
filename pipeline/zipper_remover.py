@@ -3,7 +3,9 @@ import numpy as np
 import itertools as itt
 
 def remove_zippers(trip_list, undirected_graph, directed_graph, silent=True):
-    """ Trips with pedestrians walking the wrong way on a one-way street,
+    """Corrects zig-zag artifact produced by movement against one-way traffic.
+
+    Trips with pedestrians walking the wrong way on a one-way street,
     when routed on a directed graph create a zipper-like pattern with
     an artificially inflated velocity. This function identifies and
     removes these patterns.

@@ -84,8 +84,8 @@ def jumbo_write_df(df, db_name, table_name, df_chunk_size=5e5,
     Often necessary even for smaller ones.
 
     df [pandas DataFrame]: 'nuff said.
-    db_name [str]: an existing RethinkDB database.
-    table_name [str]: an existing RethinkDB table.
+    db_name [str]: a RethinkDB database, existing or not.
+    table_name [str]: a RethinkDB table, existing or not.
     df_chunk_size [int or float of form BASEeEXP]: input df will be broken into
         chunks of this many rows. If you encounter memory use issues, reduce
         this value first. Maximum accepted value is 1,000,000.
@@ -188,10 +188,6 @@ def retrieve_records(api_key, sensor_path, db_name,
         jumbo_write_json will be broken into chunks of this size. No need to
         modify unless you encounter memory use issues, in which case you should
         first try reducing the default value of 5,000.
-    df_chunk_size [int or float of form BASEeEXP]: DataFrames passed to
-        jumbo_write_df will be broken into chunks of this many rows.
-        No need to modify unless you encounter memory use issues, in which
-        case you should next try reducing the default value of 500,000.
     verbosity [int]: determines the number of reports that will be printed.
         0 = no reports
         1 = reports from this function only
