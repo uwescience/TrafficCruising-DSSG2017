@@ -2,16 +2,16 @@
 There is already an AMI on AWS called CruisingPipeline (in Oregon region). This image is set up and ready to go. If you're working locally, follow the instructions below. None of this has been tested on Windows, but it all works on OS X Yosemite and Ubuntu 14.04.
 1. Install [RethinkDB](https://www.rethinkdb.com/docs/install/).
 1. Start RethinkDB with `rethinkdb`. This will occupy your terminal until you close it with [ctrl]+c. If you're working remotely, use `rethinkdb &`. Once it loads, press [enter] to get your prompt back and keep working.
- + NOTICE: RethinkDB will store data in whichever directory you're in when you call `rethinkdb`. Data will be saved in a new subdirectory called rethinkdb_data. To access the same data each time you use RethinkDB, make sure you always run `rethinkdb` from the same directory.
+   + NOTICE: RethinkDB will store data in whichever directory you're in when you call `rethinkdb`. Data will be saved in a new subdirectory called rethinkdb_data. To access the same data each time you use RethinkDB, make sure you always run `rethinkdb` from the same directory.
 1. Use pip to install networkx, rethinkdb, geopy, and tzlocal (e.g. `pip install networkx`). If you aren't using an Anaconda installation of Python, you'll need numpy, pandas, and a few other modules that are not part of the standard library. Errors will let you know if there are others. Install them with pip.
 1. If you have an Acyclica API key, store it as an environment variable
-  1. Write the key to a text file called, e.g. "acyc_key.txt" (should outside of any public version-controlled repo).
-  1. Restrict user permissions to that file with `chmod 700 acyc_key.txt`.
-  1. Append `export ACYC=$(cat <path>/acyc_key.txt)` to your shell run commands file. If you're using bash, this is usually called `.bashrc`, and it can usually be found in your home directory (as a hidden file). Change <path> to the actual path to the text file you created.
-  1. Execute your run commands file, either with something like `. .bashrc` or by closing and reopening your terminal. If you already have `00_run_pipeline.py` open, you may have to close and reopen it too.
+   1. Write the key to a text file called, e.g. "acyc_key.txt" (should outside of any public version-controlled repo).
+   1. Restrict user permissions to that file with `chmod 700 acyc_key.txt`.
+   1. Append `export ACYC=$(cat <path>/acyc_key.txt)` to your shell run commands file. If you're using bash, this is usually called `.bashrc`, and it can usually be found in your home directory (as a hidden file). Change <path> to the actual path to the text file you created.
+   1. Execute your run commands file, either with something like `. .bashrc` or by closing and reopening your terminal. If you already have `00_run_pipeline.py` open, you may have to close and reopen it too.
 1. `00_run_pipeline.py` is set up to pull the last week of data (ending yesterday) from Acyclica, run each day through the standard series of filters, segmenters, router, and annotaters. If you'd like to modify the pipeline, you'll learn more about it in the next section. Change the working directory path near the top. It should point to the top level of the project folder (AKA git repo).
 1. Save changes to `00_run_pipeline.py`. Run it with `python 00_run_pipeline.py`.
-  + NOTICE: the pipeline is not currently set up to clean up old records. In other words, days of data pulled from Acyclica and run through the pipeline will accumulate within the database and probably cause problems with the visualization. We're working on this.
+   + NOTICE: the pipeline is not currently set up to clean up old records. In other words, days of data pulled from Acyclica and run through the pipeline will accumulate within the database and probably cause problems with the visualization. We're working on this.
 1. Results will be saved in the app directory. See readme file there for more. If you're using AWS, viewing the results may not be straightforward, as they'll be available on localhost, but localhost will be accessible via by a terminal window. We're working on this.
 
 # Pipeline functions
