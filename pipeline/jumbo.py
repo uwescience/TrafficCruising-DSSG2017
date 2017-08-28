@@ -12,7 +12,7 @@ import io
 import math
 
 
-def jumbo_write_json(data, table_name, chunk_size=5000, silent=True):
+def jumbo_write_json(data, db_name, table_name, chunk_size=5000, silent=True):
 
     '''Write big JSON lists to RethinkDB.
 
@@ -20,7 +20,8 @@ def jumbo_write_json(data, table_name, chunk_size=5000, silent=True):
     Often necessary even for smaller ones.
 
     data [list]: a list of dicts in JSON format.
-    table_name [str]: an existing RethinkDB table.
+    db_name [str]: a RethinkDB database, existing or not.
+    table_name [str]: a RethinkDB table, existing or not.
     chunk_size [int or float of form BASEeEXP]: input list will be broken into
         chunks of this size. If you encounter memory use issues, reduce this
         value.
@@ -36,6 +37,17 @@ def jumbo_write_json(data, table_name, chunk_size=5000, silent=True):
     chunk_size = int(chunk_size) #max array length for a ReQL write is 100k; but that uses too much mem
     nchunks = math.ceil(list_length / chunk_size)
     rem = list_length % chunk_size
+
+    #create database if it doesn't already exist
+    if db_name not in r.db_list().run():
+        print('Creating database "' + db_name + '".')
+        r.db_create(db_name).run()
+
+    #create table if it doesn't already exist
+    if table_name not in r.db(db_name).table_list().run():
+        print('Creating table "' + table_name + '" in database "' \
+            + db_name + '".')
+        r.db(db_name).table_create(table_name).run()
 
     if silent == False:
         print('Writing list of ' + str(list_length) + ' trips to table "' \
@@ -54,16 +66,16 @@ def jumbo_write_json(data, table_name, chunk_size=5000, silent=True):
             print('Writing trips ' + str(s) + '-' + str(e - 1) + '.')
 
         #write chunk to rethink (some data may be lost in case of power failure)
-        r.table(table_name).insert(data[s:e]).run(durability='soft',
+        r.db(db_name).table(table_name).insert(data[s:e]).run(durability='soft',
             noreply=False)
 
     if silent == False:
-        ndocs = r.table(table_name).count().run()
+        ndocs = r.db(db_name).table(table_name).count().run()
         print('Table "' + table_name + '" now contains ' + str(ndocs) \
             + ' trips.')
 
 
-def jumbo_write_df(df, table_name, df_chunk_size=5e5,
+def jumbo_write_df(df, db_name, table_name, df_chunk_size=5e5,
     json_chunk_size=5e3, verbosity=1):
 
     '''Write big pandas dataframes to RethinkDB.
@@ -71,8 +83,9 @@ def jumbo_write_df(df, table_name, df_chunk_size=5e5,
     Essential for datasets that are larger than 100,000 rows (ReQL max write).
     Often necessary even for smaller ones.
 
-    df [pandas DataFrame]: nuff said.
-    table_name [str]: an existing RethinkDB table.
+    df [pandas DataFrame]: 'nuff said.
+    db_name [str]: a RethinkDB database, existing or not.
+    table_name [str]: a RethinkDB table, existing or not.
     df_chunk_size [int or float of form BASEeEXP]: input df will be broken into
         chunks of this many rows. If you encounter memory use issues, reduce
         this value first. Maximum accepted value is 1,000,000.
@@ -143,17 +156,17 @@ def jumbo_write_df(df, table_name, df_chunk_size=5e5,
                 + str(len(jl2)) + ' to jumbo_write_json.')
 
         #write list to rethink
-        jumbo_write_json(data=jl2, table_name=table_name,
+        jumbo_write_json(data=jl2, db_name=db_name, table_name=table_name,
             chunk_size=json_chunk_size, silent=sil)
         del(jl2)
 
     if verbosity > 0:
-        ndocs = r.table(table_name).count().run()
+        ndocs = r.db(db_name).table(table_name).count().run()
         print('Finished writing day of records. Wrote ' + str(ndocs) \
             + ' docs to table "' + table_name + '".')
 
 
-def retrieve_records(api_key, sensor_path, table_name,
+def retrieve_records(api_key, sensor_path, db_name,
     end_date=(datetime.datetime.strptime(time.strftime('%Y-%m-%d'),
         '%Y-%m-%d') - datetime.timedelta(days=1)).strftime('%Y-%m-%d'),
     start_date=None, json_chunk_size=5e3, verbosity=1):
@@ -164,8 +177,7 @@ def retrieve_records(api_key, sensor_path, table_name,
         Should be read in from an environment variable, encrypted if possible.
     sensor_path [str]: the path to Acyclica_sensors_CBD.csv
         (should be fetched automatically once we package this thing).
-    table_name [str]: the name of the RethinkDB table that will be written. If
-        a table of the same name already exists, it will be overwritten.
+    db_name [str]: the name of the RethinkDB database that will be populated.
     end_date [str]: a date string of the form 'YYYY-MM-DD' specifying the last
         day of data to pull from Acyclica. Defaults to yesterday.
     start_date [str]: a date string of the form 'YYYY-MM-DD' specifying the first
@@ -176,10 +188,6 @@ def retrieve_records(api_key, sensor_path, table_name,
         jumbo_write_json will be broken into chunks of this size. No need to
         modify unless you encounter memory use issues, in which case you should
         first try reducing the default value of 5,000.
-    df_chunk_size [int or float of form BASEeEXP]: DataFrames passed to
-        jumbo_write_df will be broken into chunks of this many rows.
-        No need to modify unless you encounter memory use issues, in which
-        case you should next try reducing the default value of 500,000.
     verbosity [int]: determines the number of reports that will be printed.
         0 = no reports
         1 = reports from this function only
@@ -252,19 +260,9 @@ def retrieve_records(api_key, sensor_path, table_name,
         print('Preparing to acquire data for ' + str(ndays) + ' day(s) and ' \
             + str(len(sensor_list)) + ' sensors.')
 
-    #remove tables and create them anew
-    try:
-        r.table_drop(table_name).run()
-
-        if verbosity > 0:
-            print('Table "' + table_name + '" already existed and has ' \
-                + 'been deleted.')
-    except: pass
-    finally:
-        r.table_create(table_name).run()
-
-        if verbosity > 0:
-            print('Created table "' + table_name + '".')
+    #create database if it doesn't already exist
+    if db_name not in r.db_list().run():
+        r.db_create(db_name).run()
 
     #request and process one day at a time (roughly 5-10m records acquired per day)
     day_start_unix = start_unix
@@ -272,6 +270,16 @@ def retrieve_records(api_key, sensor_path, table_name,
 
         print('Acquiring records for day ' + str(day + 1) + ' of ' \
             + str(ndays) + '. May take several minutes.')
+
+        #date string will be the table name on RethinkDB
+        tname = datetime.datetime.fromtimestamp(int(day_start_unix)).strftime('%Y_%m_%d')
+        if tname in r.db(db_name).table_list().run():
+            print('Table "' + tname + '" already exists in database "' \
+                + db_name + '". Skipping this day.')
+            day_start_unix = day_start_unix + (24 * 3600) #increment day
+            continue
+        else:
+            r.db(db_name).table_create(tname).run()
 
         #get endpoints for each iteration and (re)instantiate dataframe
         day_end_unix = day_start_unix + (23 * 3600) + 3599
@@ -310,9 +318,6 @@ def retrieve_records(api_key, sensor_path, table_name,
 
         del(newdf)
 
-        # df = pd.read_csv('/home/mike/Desktop/untracked/aug5_df_justAfterAppending.csv')
-        # print('WARNING: STILL READING LOCAL DATAFRAME FROM CSV')
-
         #drop repeated reads again, keeping read with highest strength
         strmaxes = df.groupby(['Timestamp',
             'MAC Hash'])['Serial'].transform(max)
@@ -323,8 +328,6 @@ def retrieve_records(api_key, sensor_path, table_name,
             print('Found ' + pre_filt_len + ' sensor reads for day ' \
                 + str(day + 1) + '. Cleaning those now.')
 
-        # df.to_csv('/home/mike/Desktop/untracked/aug5_df_justAfterAppending.csv', index=False)
-
         json_list = df_to_json_etc(df, verbosity, pre_filt_len, sensors)
 
         if verbosity > 0:
@@ -332,35 +335,11 @@ def retrieve_records(api_key, sensor_path, table_name,
                 + 'Passing list of length ' + str(len(json_list)) \
                 + ' to jumbo_write_json.')
 
-        # json_list = json_list[0:11000]
-
         #set verbosity for jumbo_write_json
         sil = False if verbosity == 2 else True
 
-        #write list to rethink
-        # while len(json_list): #runs as long as rows remain in the dataframe
-        #
-        #     #take a chunk of the dataframe and convert to json list
-        #     l = min(len(df), int(df_chunk_size)) #get the first chunk_size lines, or all the rest if fewer
-        #     chunk = df.iloc[0:l] #subset them from the df
-        #     df = df.drop(df.index[0:l]) #drop those lines
-        #     json_list = chunk.to_dict('records')
-
-            # if verbosity > 0:
-            #     print('Converting chunk of ' + str(l) + ' rows to JSON format.')
-
-        jumbo_write_json(data=json_list, table_name=table_name,
+        jumbo_write_json(data=json_list, db_name=db_name, table_name=tname,
             chunk_size=json_chunk_size, silent=sil)
-
-    # if verbosity > 0:
-    #     ndocs = r.table(table_name).count().run()
-    #     print('Finished writing day of records. Wrote ' + str(ndocs) \
-    #         + ' docs to table "' + table_name + '".')
-
-        # insert df into table as JSON (calls subroutine jumbo_write_json)
-        # jumbo_write_df(df=df, table_name=table_name,
-        #     df_chunk_size=df_chunk_size, json_chunk_size=json_chunk_size,
-        #     verbosity=verbosity)
 
         #increment day
         day_start_unix = day_start_unix + (24 * 3600)
@@ -368,7 +347,8 @@ def retrieve_records(api_key, sensor_path, table_name,
     if verbosity > 0:
         run_time = round((time.time() - start_time) / 60, 2)
         print('Finished writing all records for ' + str(ndays) + ' day(s) ' \
-            + 'in ' + str(run_time) + ' minutes.')
+            + 'in ' + str(run_time) + ' minutes.\nRecords are in database "' \
+            + db_name + '".')
 
 
 def df_to_json_etc(df, verbosity, pre_filt_len, sensors):

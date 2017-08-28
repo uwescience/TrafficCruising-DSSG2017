@@ -73,11 +73,11 @@ def classify(trip_list, algorithm='gradient_boosting_classifier', silent=True):
 
     # Choose model of interest
     if algorithm == 'decision_tree':
-        model = joblib.load('scripts/cruising_identification/Results_one_week/decision_tree.pkl')
+        model = joblib.load('models/decision_tree.pkl')
     elif algorithm == 'logistic_regression':
-        model = joblib.load('scripts/cruising_identification/Results_one_week/logistic_regression.pkl')
+        model = joblib.load('models/logistic_regression.pkl')
     elif algorithm == 'gradient_boosting_classifier':
-        model = joblib.load('scripts/cruising_identification/Results_one_week/gradient_boosting_classifier.pkl')
+        model = joblib.load('models/gradient_boosting_classifier.pkl')
     else: pass
 
     # Predict based on model chosen

@@ -1,4 +1,4 @@
-def filter_short_trips(trip_list, unique_sensor_count, silent=True):
+def filter_short_trips(trip_list, unique_sensor_count=4, silent=True):
 
     """Removes trips too short to be identifiable as cruising.
 

@@ -11,8 +11,6 @@ def graph_generator(path):
     Returns an list of Networkx graph objects: undirected graph (index 0) and
     directed graph (index 1)."""
 
-
-
     # import node data from the geojson file taken from OSM
     with open(path) as f:
         data = json.load(f)
