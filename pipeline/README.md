@@ -1,9 +1,10 @@
 # Pipeline instructions
-There is already an AMI on AWS called CruisingPipeline (in Oregon region). This image is set up and ready to go. If you're working locally, follow the instructions below. None of this has been tested on Windows, but it all works on OS X Yosemite and Ubuntu 14.04.
+There is already an AMI on AWS called CruisingPipeline_image. This image is set up and ready to go. If you're working locally, follow the instructions below. None of this has been tested on Windows, but it all works on OS X Yosemite and Ubuntu 14.04.
 1. Install [RethinkDB](https://www.rethinkdb.com/docs/install/).
 1. Start RethinkDB with `rethinkdb`. This will occupy your terminal until you close it with [ctrl]+c. If you're working remotely, use `rethinkdb &`. Once it loads, press [enter] to get your prompt back and keep working.
    + NOTICE: RethinkDB will store data in whichever directory you're in when you call `rethinkdb`. Data will be saved in a new subdirectory called rethinkdb_data. To access the same data each time you use RethinkDB, make sure you always run `rethinkdb` from the same directory.
 1. Use pip to install networkx, rethinkdb, geopy, and tzlocal (e.g. `pip install networkx`). If you aren't using an Anaconda installation of Python, you'll need numpy, pandas, and a few other modules that are not part of the standard library. Errors will let you know if there are others. Install them with pip.
+1. Make sure you have the most recent version of this repository. Assuming you cloned it, that can be done with `git pull origin master`.
 1. If you have an Acyclica API key, store it as an environment variable (This step has been done on the AMI. You just have to put the real key inside the text file, which is in the home directory.)
    1. Write the key to a text file called, e.g. "acyclica_api.txt" (should be outside of any public version-controlled repo)
    1. Restrict user permissions to that file with `chmod 700 acyc_key.txt`.
