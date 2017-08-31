@@ -1,16 +1,13 @@
 import rethinkdb as r
 import pipeline_main as pl
 import os
-# import json
 import datetime
 import time
 import warnings
 warnings.filterwarnings("ignore")
-# from importlib import reload
-# reload(pl)
 
 #set working directory to top level of git repo
-os.chdir('/home/ubuntu/RUN_PIPELINE_HERE/TrafficCruising-DSSG2017')
+os.chdir('/home/ubuntu/RUN_PIPELINE_HERE/TrafficCruising-DSSG2017') #AWS path
 
 #load API key from environment variable
 key = os.environ['ACYC']
@@ -23,6 +20,9 @@ graphs = pl.graph_generator('data/nodes.geojson')
 
 #select a database (existing or not) to write records to
 db = 'example'
+
+#delete old records that might be cluttering the database
+pl.remove_old_days(db_name=db, older_than=8, silent=True)
 
 #pull new records from Acyclica
 pl.retrieve_records(api_key=key,

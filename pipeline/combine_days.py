@@ -5,6 +5,8 @@ def combine_days(db_name, silent=True):
     """Combines days of data into one JSON list.
 
     db_name [str]: an existing RethinkDB database.
+    silent [bool]: if True, does not print reports.
+
 
     Reads all tables in the given database into memory
     and returns them as a list of dicts."""
