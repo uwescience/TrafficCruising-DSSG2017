@@ -60,6 +60,20 @@ Must be connected to a RethinkDB instance before using this.
 Pull at minimum 1 day and at maximum 1 week of data in increments of 1
 day.
 
+## remove_old_records
+__Deletes old days (tables) from a database.__
+
+### args
+  + *db_name* [str]: an existing RethinkDB database.
+  + *older_than* [int]: delete days before this number of days ago.
+        Default value will keep one week of data in the database
+        (remember, no data are collected for the current day).
+    + default = 8
+  + *silent* [bool]: if True, does not print reports.
+    + default = True
+
+Returns nothing.
+
 ## segment_gaps
 __Splits trips if there are sufficiently large gaps in read times.__
 
@@ -270,6 +284,8 @@ __Combines days of data into one JSON list.__
 
 ### args
   + *db_name* [str]: an existing RethinkDB database
+  + *silent* [bool]: if True, does not print reports.
+    + default = True
 
 Reads all tables in the given database into memory
 and returns them as a list of dicts.
