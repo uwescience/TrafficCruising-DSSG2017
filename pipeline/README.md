@@ -12,7 +12,6 @@ There is already an AMI on AWS called CruisingPipeline_image. This image is set 
    1. Execute your run commands file, either with something like `. .bashrc` or by closing and reopening your terminal. If you already have `00_run_pipeline.py` open, you may have to close and reopen it too.
 1. `00_run_pipeline.py` is set up to pull the last week of data (ending yesterday) from Acyclica, run each day through the standard series of filters, segmenters, router, and annotaters. If you'd like to modify the pipeline, you'll learn more about it in the next section. Change the working directory path near the top. It should point to the top level of the project folder (AKA git repo).
 1. Save changes to `00_run_pipeline.py`. Run it with `python 00_run_pipeline.py`.
-   + NOTICE: the pipeline is not currently set up to clean up old records. In other words, days of data pulled from Acyclica and run through the pipeline will accumulate within the database and probably cause problems with the visualization. We're working on this.
 1. Results will be saved in the app directory. See readme file there for more. If you're using AWS, viewing the results may not be straightforward, as they'll be available on localhost, but localhost will be accessible via by a terminal window. We're working on this.
 
 # Pipeline functions
@@ -60,7 +59,7 @@ Must be connected to a RethinkDB instance before using this.
 Pull at minimum 1 day and at maximum 1 week of data in increments of 1
 day.
 
-## remove_old_records
+## remove_old_days
 __Deletes old days (tables) from a database.__
 
 ### args
@@ -286,6 +285,19 @@ __Combines days of data into one JSON list.__
   + *db_name* [str]: an existing RethinkDB database
   + *silent* [bool]: if True, does not print reports.
     + default = True
+
+WARNING: This function can use a *lot* of RAM. If you try to use it on
+a week of data for which filter_noncruising and segment_driving have not
+been run, you may consume all available RAM and mandate a forced shutdown
+of your computer. To avoid this, either omit combine_days in the pipeline
+and just leave each day separate, run the aforementioned filtering/segmenting
+steps before using this function, or run the pipeline on the EC2 instance,
+which has 15GB of RAM. If you're on a Unix machine, you can also prevent memory
+throttling with the shell command `ulimit -v <kB to allocate>`, where eg `5000000`
+would allocate 5GB of RAM and raise a Python memory error before throttling would
+occur. First you'd want to check how much memory is actually available with
+`free -m`, where the second row of the "free" column is the total amount of
+available memory in MB.
 
 Reads all tables in the given database into memory
 and returns them as a list of dicts.
